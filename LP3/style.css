@@ -1,0 +1,40 @@
+body{
+    
+}
+
+.Main {
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.top{
+    text-align: center;
+}
+
+input {
+    width: 100%;
+}
+
+.formDiv {
+    background-color: orange;
+    padding: 10px 10px 2px 10px;
+    border-radius: 15px;
+}
+
+#label{
+    text-align: left;
+    font-size: 17px;
+}
+
+.buttonHolder{
+    text-align: center;
+}
+#button{
+    width: 100px;
+    height: 25px;
+    font-size: 15px;
+    text-align: center;
+
+}

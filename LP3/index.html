@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Latihan Pribadi 3 Login Validasi</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="Main">
+            <h1 class="top">Registration Form</h1>
+            <div class="formDiv">
+                <form method="post" action="#">
+                    <label for="username" id="label">Username :</label></br>
+                    <input type="text" id="username"/>
+
+                    <label for="password" id="label">Password :</label></br>
+                    <input type="password" id="password"/>
+
+                    <label for="conPass" id="label">Confirm Password :</label></br>
+                    <input type="password" id="conPass"/>
+
+                    <label for="email" id="label">Email :</label></br>
+                    <input type="text" id="email"/>
+
+                    <label for="conEmail" id="label">Confirm Email :</label></br>
+                    <input type="text" id="conEmail"/></br></br>
+
+                    <div class="buttonHolder">
+                        <input id="button" type="submit" value="Submit" onclick="return cekValidasi();"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
