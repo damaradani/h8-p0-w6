@@ -1,13 +1,66 @@
 <html>
-  <head>
-      <title> Phase 0 DOM Project </title>
-  </head>
-  <body>
+<head>
+  <title>Phase 0 Project</title>
 
-      <div id="main">
-          
-      </div>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
 
-      <script src="script.js"> </script>
-  </body>
-</hmtl>
+  <div class="header">
+    <h1>WARUNG MAMIH</h1>
+    <p>Toko Kecil - kecilan.</p>
+  </div>
+
+  <div class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+
+  <div class="row">
+    <div class="column side">  </div>
+
+    <div class="column middle">
+        <div class="card">
+          <h2>Hitung Pembelian</h2>
+          <p>
+            <select name="cbBarang" id="cbBarang" onchange="cbBarangPriceShow(this.options[this.selectedIndex].value)">
+                <option selected="selected" disabled>Pilih Barang</option>
+            </select>
+            <input type="text" id="hargaBarang" disabled/>
+            <label for="jumlahBarang">Masukan Jumlah Barang: </label>
+            <input type="text" id="jumlahBarang" onkeypress="return isNumberKey(event)" />
+            <button onclick="return cekKosong()" name="addBarang" id="addBarang" >Tambah Barang</button>
+            <button onclick="return delLastBarang()" name="delLastBarang" id="delLastBarang">Hapus Barang Terkahir</button>
+          </p>
+          <div>
+            <table id="tbBarang">
+                <tr>
+                  <th>Nama Barang</th>
+                  <th>Harga Satuan</th>
+                  <th>Jumlah dibeli</th>
+                  <th>Total</th>
+                </tr>
+            </table>
+          </div><br/>
+
+          <input type="text" id="txtGrandTot" disabled value= 0 />
+          <label for="txtGrandTot" id="lblGrandTot">Grand Total :</label><br/><br/>
+
+          <input type="text" id="txtDuitPembeli" onkeypress="return isNumberKey(event)"/>
+          <label for="txtDuitPembeli" id="lblDuitPembeli">Masukan jumlah Uang :</label><br/><br/>
+
+          <input type="text" id="txtKembali" disabled/>
+          <label for="txtKembali" id="lblKembali">Kembali :</label><br/><br/>
+
+          <button onclick="return hitungKembali()" name="kembali" id="kembali" >Hitung Kembalian</button>
+        </div>
+    </div>
+    <div class="column side">  </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
