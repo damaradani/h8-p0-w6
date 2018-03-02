@@ -111,9 +111,14 @@ function hitungKembali(){
         return false;
     }else{
         let kembalian = uang - grandTot;
+        if(uang < grandTot){
+            alert("Uang Kurang "+kembalian+" Rupiah");
+            return false;
+        }else{
+          document.getElementById("txtKembali").value = kembalian;
+          console.log(kembalian);
+        }
 
-        document.getElementById("txtKembali").value = kembalian;
-        console.log(kembalian);
     }
 }
 
