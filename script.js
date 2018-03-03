@@ -1,23 +1,63 @@
-//memasukan Array Barang ke dalam cbBarang
-var Barang = [
-                ["ABC kopi susu", 1500],
-                ["ABC mocca", 1400],
-                ["GOOD DAY 3 IN 1", 2000],
-                ["GOOD DAY FRESH", 1300],
-                ["Indocafe coffemix", 1400],
-                ["Kapal api", 1350],
-                ["TOP KOPI", 2500],
-                ["Torabika Oke", 2100],
-                ["WHITE KOFFIE", 3000]
-             ];
+var globalBarang = [];
 
-var cbBarang = document.getElementById('cbBarang');
+window.onload = comboBoxBarang(globalBarang);
 
-for(var i = 0; i < Barang.length; i++) {
-    var opt = document.createElement('option');
-    opt.innerHTML = Barang[i][0];
-    opt.value = Barang[i][1];
-    cbBarang.appendChild(opt);
+function comboBoxBarang(globalBarang){
+    //memasukan Array Barang ke dalam cbBarang
+    var Barang = [
+                    ["ABC kopi susu", 1500],
+                    ["ABC mocca", 1400],
+                    ["GOOD DAY 3 IN 1", 2000],
+                    ["GOOD DAY FRESH", 1300],
+                    ["Indocafe coffemix", 1400],
+                    ["Kapal api", 1350],
+                    ["TOP KOPI", 2500],
+                    ["Torabika Oke", 2100],
+                    ["WHITE KOFFIE", 3000]
+                 ];
+
+    var cbBarang = document.getElementById('cbBarang');
+
+    for(var i = 0; i < Barang.length; i++) {
+        var opt = document.createElement('option');
+        opt.innerHTML = Barang[i][0];
+        opt.value = Barang[i][1];
+        cbBarang.appendChild(opt);
+        var temp = [];
+        temp.push(Barang[i][0]);
+        temp.push(Barang[i][1])
+        globalBarang.push(temp);
+    }
+
+    console.log(cbBarang[0].innerHTML);
+}
+
+function submitBarang() {
+    let txtNamaBarang = document.getElementById("txtNamaBarang").value;
+    let txtHargaBarang = document.getElementById("txtHargaBarang").value;
+
+    if(txtNamaBarang == "" || txtNamaBarang == undefined){
+        alert("Isi Nama Barang!");
+        return false;
+    }else if (txtHargaBarang == "" || txtHargaBarang == undefined) {
+        alert("Isi Harga Barang!");
+        return false;
+    }else{
+        //console.log(globalBarang);
+        let cbBarang = document.getElementById('cbBarang');
+        globalBarang.push([txtNamaBarang, txtHargaBarang]);
+
+        let opt = document.createElement('option');
+        // opt.innerHTML = globalBarang[globalBarang.length-1][0];
+        // opt.value = globalBarang[globalBarang.length-1][1];
+        opt.innerHTML = txtNamaBarang;
+        opt.value = parseInt(txtHargaBarang);
+        cbBarang.appendChild(opt);
+        //return comboBoxBarang(globalBarang);
+
+        document.getElementById('myModal').style.display = "none";
+    }
+
 }
 
 //Menampilkan harga dari Barang yang dipilih di cbBarang
