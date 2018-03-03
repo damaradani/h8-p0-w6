@@ -103,20 +103,20 @@ function hitungKembali(){
     let uang = document.getElementById("txtDuitPembeli").value;
     let grandTot = document.getElementById("txtGrandTot").value;
 
-    if(uang == "" || uang == undefined){
-        alert("Jumlah Uang Pembeli harus di isi!");
-        return false;
-    }else if (grandTot == 0) {
+    if(grandTot == 0){
         alert("Pilih Dulu Barang yang akan dibeli!");
         return false;
+    }else if (uang == "" || uang == undefined) {
+      alert("Jumlah Uang Pembeli harus di isi!");
+      return false;
     }else{
         let kembalian = uang - grandTot;
-        if(uang < grandTot){
+        if(kembalian < 0){
             alert("Uang Kurang "+kembalian+" Rupiah");
             return false;
         }else{
           document.getElementById("txtKembali").value = kembalian;
-          console.log(kembalian);
+          //console.log(kembalian);
         }
 
     }
