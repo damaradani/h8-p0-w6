@@ -1,0 +1,27 @@
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Tes script-main.js</title>
+
+      <link href="style.css" rel="stylesheet">
+      <link href="modal.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+  <div class="modal" id="myModal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Tambah Daftar Barang</h2>
+          <label for="txtNamaBarang">Nama Barang: </label>
+          <input type="text" id="txtNamaBarang" /><br><br>
+          <label for="txtHargaBarang">Harga Barang: </label>
+          <input type="text" id="txtHargaBarang" /><br><br>
+          <button onclick="return submitBarang(globalBarang)" id="submitBarang"/>Tambahkan Barang</button>
+      </div>
+  </div>
+  <script src="script-main.js"></script>
+  <script src="modal.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
